@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Calculator</h1>
+        <label>Num 1 :</label>
+        <input type="number" id="num1" value="">
+        <label>Num 2:</label>
+        <input type="number" id="num2" value=""><br>
+        <h4 id="result" style="background-color: red;">Result:</h4>
+        <button onclick="addFunc()">Add</button>
+        <button onclick="minusFunc()">Sub</button>
+
+    </center>
+    <script>
+        const num1 = document.querySelector('#num1');
+        const num2 = document.querySelector('#num2');
+        const result = document.querySelector('#result');
+        const temp = document.querySelector("h1")
+
+        // falsy        truth
+        // false        true
+        // undefinded   value(string, number, array, object)
+        // NaN
+        // null
+
+        const addFunc = () => {
+            const num1Value = num1.value; // 500
+            console.log(num1Value);
+            const num2Value = num2.value;
+            let total = parseInt(num1Value) + Number(num2Value);
+            // NaN -> false
+            // NaN -> -> total = 0
+
+            // NOT GATE
+            // true -> false
+            // false -> true
+             if(!total){
+                total = 0
+             }
+            console.log(typeof total);
+            result.innerHTML = `Result: ${total}`
+            result.style.backgroundColor = "green"
+        }
+        const minusFunc = () => {
+            const num1Value = num1.value;
+            const num2Value = num2.value;
+            const total = parseInt(num1Value) - Number(num2Value);
+            if(total == NaN){
+                total = 0
+             }
+            result.innerHTML = `Result: ${total}`
+        }
+    </script>
+</body>
+</html>
